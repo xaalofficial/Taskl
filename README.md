@@ -1,4 +1,4 @@
-A full stack project management application leveraging **.NET 10 (C#), Angular, and PostgreSQL**. The app provides user authentication (JWT), project & task management, and a modern UI with TailwindCSS.
+A full stack project management application leveraging **.NET 10 (C#), Angular 18, and PostgreSQL 16**. The app provides user authentication (JWT), project & task management, and a modern UI with TailwindCSS.
 
 ## Table of Contents
 - [Tech Stack](#tech-stack)
@@ -11,8 +11,8 @@ A full stack project management application leveraging **.NET 10 (C#), Angular, 
 
 ## Tech Stack
 - **Backend:** .NET 10 Web API (C#), Entity Framework Core, JWT Auth
-- **Frontend:** Angular 18, Typescript, TailwindCSS
-- **Database:** PostgreSQL
+- **Frontend:** Angular 18, TypeScript, TailwindCSS
+- **Database:** PostgreSQL 16 (16.11)
 
 ## Project Structure
 ```
@@ -26,7 +26,7 @@ frontend/  # Angular 18 + TailwindCSS UI
 
 1. **Requirements:**
    - [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) (or compatible)
-   - PostgreSQL (running locally or remotely)
+   - PostgreSQL 16 (16.11 recommended) - running locally or remotely
 
 2. **Setup:**
    ```sh
@@ -58,7 +58,7 @@ frontend/  # Angular 18 + TailwindCSS UI
 
 1. **Requirements:**
     - [Node.js (>=18)](https://nodejs.org/) & npm
-    - [Angular CLI](https://angular.io/cli)
+    - [Angular CLI 18](https://angular.io/cli)
 
 2. **Setup & Run:**
    ```sh
@@ -73,7 +73,7 @@ frontend/  # Angular 18 + TailwindCSS UI
 
 ## Database Setup (PostgreSQL)
 
-1. Make sure [PostgreSQL](https://www.postgresql.org/download/) is installed and running.
+1. Make sure [PostgreSQL 16](https://www.postgresql.org/download/) is installed and running.
 2. Update `backend/ProjectTaskManager.API/appsettings.json` if you want to change DB settings:
    - Default:
      ```
@@ -94,19 +94,19 @@ frontend/  # Angular 18 + TailwindCSS UI
 
 ## Troubleshooting
 
-- Ensure PostgreSQL is running before starting the backend and that the connection details in `appsettings.json` match your DB setup.
+- Ensure PostgreSQL 16 is running before starting the backend and that the connection details in `appsettings.json` match your DB setup.
 
 - Verify you can access PostgreSQL using:
   ```sh
   psql --version
-If psql is not recognized:
+  ```
+  If psql is not recognized:
 
-PostgreSQL may be installed, but its bin directory is not added to PATH.
+  PostgreSQL may be installed, but its bin directory is not added to PATH.
 
-Locate the PostgreSQL bin folder, usually:
+  Locate the PostgreSQL bin folder, usually:
 
-C:\Program Files\PostgreSQL\<version>\bin
-
+  `C:\Program Files\PostgreSQL\16\bin`
 
 - For CORS or auth errors, ensure the Angular app is running at `http://localhost:4200` and API at `https://localhost:5000`.
 - If you add new migrations, use:
