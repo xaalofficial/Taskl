@@ -1,0 +1,75 @@
+<div class="min-h-screen bg-gradient-to-br from-light to-blue-200">
+    <!-- Hero Section -->
+    <section class=" text-dark p-20">
+      <div class="container mx-auto px-4">
+        <h1 class="text-6xl font-bold mb-6">Welcome to Taskal</h1>
+        <p class="text-3xl mb-4 max-w-2xl">
+          The ultimate project and task management solutions.
+        </p>
+
+        <p class="text-xl mb-8 max-w-xl">
+          Organize your work, track progress, and achieve your goals.
+        </p>
+
+        <button 
+          (click)="navigateToLogin()"
+          class="bg-primary text-light hover:bg-primary-dark px-8 py-4 rounded-lg text-lg font-semibold transition ">
+          Get Started
+        </button>
+      </div>
+    </section>
+  
+    <!-- Features Section -->
+    <section class="p-20 mb-20">
+      <div class="container mx-auto px-4">
+        <h2 class="text-5xl font-bold text-center text-dark mb-12">Features</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-primary p-8 rounded-lg shadow-md text-center">
+            <div class="text-primary text-5xl mb-4">📋</div>
+            <h3 class="text-2xl font-semibold text-light mb-3">Project Management</h3>
+            <p class="text-gray-200">
+              Create and organize projects with ease. Track progress and manage multiple projects simultaneously.
+            </p>
+          </div>
+          
+          <div class="bg-primary p-8 rounded-lg shadow-md text-center">
+            <div class="text-success text-5xl mb-4">✅</div>
+            <h3 class="text-2xl font-semibold text-light mb-3">Task Tracking</h3>
+            <p class="text-gray-200">
+              Add tasks with descriptions and due dates. Mark tasks as complete and filter by status.
+            </p>
+          </div>
+          
+          <div class="bg-primary p-8 rounded-lg shadow-md text-center">
+            <div class="text-accent text-5xl mb-4">📊</div>
+            <h3 class="text-2xl font-semibold text-light mb-3">Progress Visualization</h3>
+            <p class="text-gray-200">
+              Visual progress bars show completion status at a glance. Stay on top of your work.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- CTA Section -->
+    <section class="p-20 bg-primary text-light">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-6">Ready to boost your productivity?</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Try Taskal today and start managing your tasks more clearly and efficiently.
+        </p>
+        <button 
+          (click)="navigateToLogin()"
+          class="bg-light text-primary hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition">
+          Start Now
+        </button>
+      </div>
+    </section>
+  
+    <!-- Footer -->
+    <footer class="bg-light text-dark py-8">
+      <div class="container mx-auto px-4 text-center">
+        <p class="text-gray-400">&copy; 2025 Taskal. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>

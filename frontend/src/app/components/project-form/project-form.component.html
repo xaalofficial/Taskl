@@ -1,0 +1,69 @@
+<div class="min-h-screen bg-gray-50 py-8">
+    <div class="container mx-auto px-4 max-w-2xl">
+      <h1 class="text-4xl font-bold text-dark mb-8">
+        {{ isEditMode ? 'Edit Project' : 'Create New Project' }}
+      </h1>
+  
+      <div *ngIf="isLoading" class="text-center py-12">
+        <p class="text-gray-500 text-lg">Loading project...</p>
+      </div>
+  
+      <div *ngIf="!isLoading" class="bg-light rounded-lg shadow-md p-8">
+        <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+          <div class="mb-6">
+            <label for="title" class="block text-dark font-medium mb-2">
+              Project Title <span class="text-danger">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="title" 
+              formControlName="title"
+              class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary"
+              placeholder="Enter project title"
+              [class.border-danger]="title?.invalid && title?.touched"
+              maxlength="200">
+            <div *ngIf="title?.invalid && title?.touched" class="text-danger text-sm mt-1">
+              <span *ngIf="title?.errors?.['required']">Project title is required</span>
+              <span *ngIf="title?.errors?.['maxlength']">Title must not exceed 200 characters</span>
+            </div>
+            <p class="text-gray-500 text-sm mt-1">{{ title?.value?.length || 0 }} / 200 characters</p>
+          </div>
+  
+          <div class="mb-6">
+            <label for="description" class="block text-dark font-medium mb-2">
+              Description (Optional)
+            </label>
+            <textarea 
+              id="description" 
+              formControlName="description"
+              rows="5"
+              class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary"
+              placeholder="Enter project description"
+              [class.border-danger]="description?.invalid && description?.touched"
+              maxlength="1000"></textarea>
+            <div *ngIf="description?.invalid && description?.touched" class="text-danger text-sm mt-1">
+              <span *ngIf="description?.errors?.['maxlength']">Description must not exceed 1000 characters</span>
+            </div>
+            <p class="text-gray-500 text-sm mt-1">{{ description?.value?.length || 0 }} / 1000 characters</p>
+          </div>
+  
+          <div class="flex gap-4">
+            <button 
+              type="submit" 
+              [disabled]="isSaving"
+              class="bg-primary hover:bg-primary-dark text-light px-6 py-3 rounded-lg font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed">
+              {{ isSaving ? 'Saving...' : (isEditMode ? 'Update Project' : 'Create Project') }}
+            </button>
+            <button 
+              type="button"
+              (click)="cancel()"
+              [disabled]="isSaving"
+              class="bg-gray-300 hover:bg-gray-400 text-dark px-6 py-3 rounded-lg font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,13 @@
+.line-through {
+  text-decoration: line-through;
+}
+
+input[type="checkbox"] {
+  accent-color: #5CF76B;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
