@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ProjectTaskManager.Application\\Interfaces",
+    "\\ProjectTaskManager.Domain\\Entities",
+    "\\ProjectTaskManager.Infrastructure",
+    "\\ProjectTaskManager.Infrastructure\\Configuration",
+    "\\ProjectTaskManager.Infrastructure\\Persistence"
+  ],
+  "SelectedNode": "\\ProjectTaskManager.Infrastructure\\Persistence\\DbInitializer.cs",
+  "PreviewInSolutionExplorer": false
+}

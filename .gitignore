@@ -1,0 +1,33 @@
+# Backend build and publish outputs
+**/bin/
+**/obj/
+*.user
+*.vspscc
+*.vssscc
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+.history/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Node dependencies (if any frontend present)
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+
+# Environment/config files
+*.env
+
+# python/AI editors, ignore backup files
+*.cursor/
+.cursor/
+
