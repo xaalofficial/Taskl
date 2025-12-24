@@ -1,22 +1,23 @@
-# ProjectTaskManager Full Stack Application
-
-A full stack project management application leveraging **.NET 10 (C#) and PostgreSQL**. The app provides user authentication (JWT), project & task management, and a modern Web API.
+A full stack project management application leveraging **.NET 10 (C#), Angular, and PostgreSQL**. The app provides user authentication (JWT), project & task management, and a modern UI with TailwindCSS.
 
 ## Table of Contents
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
 - [Running the Backend (.NET 10 API)](#running-the-backend-net-10-api)
+- [Running the Frontend (Angular)](#running-the-frontend-angular)
 - [Database Setup (PostgreSQL)](#database-setup-postgresql)
 
 ---
 
 ## Tech Stack
 - **Backend:** .NET 10 Web API (C#), Entity Framework Core, JWT Auth
+- **Frontend:** Angular 18, Typescript, TailwindCSS
 - **Database:** PostgreSQL
 
 ## Project Structure
 ```
 backend/   # .NET 10 solution, divided into API, Application, Infrastructure, Domain
+frontend/  # Angular 18 + TailwindCSS UI
 ```
 
 ---
@@ -53,6 +54,23 @@ backend/   # .NET 10 solution, divided into API, Application, Infrastructure, Do
 
 ---
 
+## Running the Frontend (Angular)
+
+1. **Requirements:**
+    - [Node.js (>=18)](https://nodejs.org/) & npm
+    - [Angular CLI](https://angular.io/cli)
+
+2. **Setup & Run:**
+   ```sh
+   cd frontend
+   npm install
+   npm start
+   # App will run at http://localhost:4200
+   ```
+   - The Angular development server connects to the backend API at https://localhost:5000 (see `environment.ts` if needed).
+
+---
+
 ## Database Setup (PostgreSQL)
 
 1. Make sure [PostgreSQL](https://www.postgresql.org/download/) is installed and running.
@@ -79,23 +97,23 @@ backend/   # .NET 10 solution, divided into API, Application, Infrastructure, Do
 - Ensure PostgreSQL is running before starting the backend and that the connection details in `appsettings.json` match your DB setup.
 
 - Verify you can access PostgreSQL using:
-   ```sh
-   psql --version
-   ```
+  ```sh
+  psql --version
+If psql is not recognized:
 
-If `psql` is not recognized:
-- PostgreSQL may be installed, but its bin directory is not added to the PATH environment variable.
-- Locate the PostgreSQL bin folder, usually:
-  C:\Program Files\PostgreSQL\<version>\bin
-- Add this path to Environment Variables -> PATH
-- Restart your terminal after updating PATH
+PostgreSQL may be installed, but its bin directory is not added to PATH.
 
-- For CORS or auth errors, ensure the API is running at `http://localhost:5000`.
+Locate the PostgreSQL bin folder, usually:
+
+C:\Program Files\PostgreSQL\<version>\bin
+
+
+- For CORS or auth errors, ensure the Angular app is running at `http://localhost:4200` and API at `https://localhost:5000`.
 - If you add new migrations, use:
-   ```sh
-   dotnet ef migrations add MigrationName --startup-project ProjectTaskManager.API
-   dotnet ef database update --startup-project ProjectTaskManager.API
-   ```
+  ```sh
+  dotnet ef migrations add MigrationName --startup-project ProjectTaskManager.API
+  dotnet ef database update --startup-project ProjectTaskManager.API
+  ```
 
 ---
 
@@ -104,6 +122,17 @@ If `psql` is not recognized:
   - `dotnet restore` – Restore NuGet packages
   - `dotnet run` – Start API & apply migrations
   - `dotnet ef database update` – Apply DB migration
+
+- **Frontend:**
+  - `npm start` / `ng serve` – Start Angular dev server
+  - `npm run build` / `ng build` – Build UI
+
+---
+
+## Other
+- **Swagger**: Enabled at `/swagger` when in Development environment
+- **JWT Secret Key & Auth**: Configurable in `appsettings.json` (not for prod)
+- **TailwindCSS**: See `frontend/tailwind.config.js` for customization
 
 ---
 
